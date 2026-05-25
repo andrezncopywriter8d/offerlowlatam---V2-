@@ -502,6 +502,22 @@ body > .sticky-offer-bar,
 
 @media (max-width:767px){
   body{padding-bottom:112px !important;}
+  .elementor-11737 .elementor-element.elementor-element-5c6c16f{
+    --padding-top:52px !important;
+    --padding-bottom:18px !important;
+  }
+  .elementor-11737 .elementor-element.elementor-element-4f85e9fd{
+    margin-bottom:14px !important;
+    overflow:visible !important;
+  }
+  .elementor-11737 .elementor-element.elementor-element-4f85e9fd .elementor-heading-title{
+    display:block !important;
+    min-height:72px !important;
+    overflow:visible !important;
+    font-size:30px !important;
+    line-height:1.08 !important;
+    letter-spacing:0 !important;
+  }
   .elementor-11737 .offer-conversion-card{padding:16px 10px 12px !important;}
   .elementor-11737 .offer-top-badge{font-size:14px !important;padding:7px 18px !important;margin-bottom:9px !important;}
   .elementor-11737 .offer-main-title{font-size:31px !important;line-height:1 !important;margin-bottom:6px !important;}
@@ -589,11 +605,6 @@ body > .sticky-offer-bar,
 }
 
 /* Animacoes de venda por etapa */
-.elementor-11737 > .e-parent:not(:first-child){
-  content-visibility:auto;
-  contain-intrinsic-size:auto 720px;
-}
-
 .sales-motion-ready .motion-section .motion-item,
 .sales-motion-ready .motion-section .offer-motion-item{
   opacity:0;
@@ -691,5 +702,23 @@ body > .sticky-offer-bar,
     clip-path:none !important;
     animation:none !important;
     transition:none !important;
+  }
+}
+
+/* CTA final: todos os botoes de conversao pulsam e levam ate a oferta */
+.elementor-11737 a.elementor-button[href="#oferta"],
+.elementor-11737 a.offer-main-cta,
+.elementor-11737 a.hotmart__button-checkout,
+.sticky-offer__cta{
+  animation:offerCtaPulse 1.35s ease-in-out infinite !important;
+  transform-origin:center !important;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .elementor-11737 a.elementor-button[href="#oferta"],
+  .elementor-11737 a.offer-main-cta,
+  .elementor-11737 a.hotmart__button-checkout,
+  .sticky-offer__cta{
+    animation:none !important;
   }
 }

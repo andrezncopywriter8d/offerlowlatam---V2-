@@ -1,14 +1,34 @@
-<!DOCTYPE html><html lang="es-LA"><head>
-	<!-- Google Tag Manager -->
-	<script defer="" referrerpolicy="origin" src="js/s.js"></script><script async="" src="js/fbevents.js"></script><script async="" src="js/gtm.js"></script><script>(function (w, d, s, l, i) {
-			w[l] = w[l] || []; w[l].push({
-				'gtm.start':
-					new Date().getTime(), event: 'gtm.js'
-			}); var f = d.getElementsByTagName(s)[0],
-				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-KC7KWN5F');</script>
-	<!-- End Google Tag Manager -->
+﻿<!DOCTYPE html><html lang="es-LA"><head>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		window.fbq = window.fbq || function () { (window.fbq.queue = window.fbq.queue || []).push(arguments); };
+		window.fbq('init', '1703116340263333');
+		window.fbq('track', 'PageView');
+
+		function loadMarketingTags() {
+			if (window.__marketingTagsLoaded) return;
+			window.__marketingTagsLoaded = true;
+
+			window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+			var gtm = document.createElement('script');
+			gtm.async = true;
+			gtm.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KC7KWN5F';
+			document.head.appendChild(gtm);
+
+			var pixel = document.createElement('script');
+			pixel.async = true;
+			pixel.src = 'https://connect.facebook.net/en_US/fbevents.js';
+			document.head.appendChild(pixel);
+		}
+
+		window.addEventListener('load', function () {
+			var wake = function () { loadMarketingTags(); };
+			['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(function (eventName) {
+				window.addEventListener(eventName, wake, { once: true, passive: true });
+			});
+			setTimeout(wake, 3500);
+		}, { once: true });
+	</script>
 	<meta charset="UTF-8">
 	<title>Ensaladas en Frasco + Aderezos</title>
 	<meta name="robots" content="max-image-preview:large">
@@ -17,28 +37,8 @@
 			contain-intrinsic-size: 3000px 1500px
 		}
 	</style>
-	<link rel="alternate" type="application/rss+xml" title="Feed de recetas nuevas »" href="feed/index.htm">
+	<link rel="alternate" type="application/rss+xml" title="Feed de recetas nuevas Â»" href="feed/index.htm">
 	<link rel="alternate" type="application/rss+xml" title="Feed de comentarios para recetas nuevas" href="comments/feed/index.htm">
-	<script>
-		window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.3" } };
-		/*! This file is auto-generated */
-		!function (s, n) { var o, i, e; function c(e) { try { var t = { supportTests: e, timestamp: (new Date).valueOf() }; sessionStorage.setItem(o, JSON.stringify(t)) } catch (e) { } } function p(e, t, n) { e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0); var t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data), a = (e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0), new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data)); return t.every(function (e, t) { return e === a[t] }) } function u(e, t) { e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0); for (var n = e.getImageData(16, 16, 1, 1), a = 0; a < n.data.length; a++)if (0 !== n.data[a]) return !1; return !0 } function f(e, t, n, a) { switch (t) { case "flag": return n(e, "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !n(e, "\ud83c\udde8\ud83c\uddf6", "\ud83c\udde8\u200b\ud83c\uddf6") && !n(e, "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"); case "emoji": return !a(e, "\ud83e\udedf") }return !1 } function g(e, t, n, a) { var r = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? new OffscreenCanvas(300, 150) : s.createElement("canvas"), o = r.getContext("2d", { willReadFrequently: !0 }), i = (o.textBaseline = "top", o.font = "600 32px Arial", {}); return e.forEach(function (e) { i[e] = t(o, e, n, a) }), i } function t(e) { var t = s.createElement("script"); t.src = e, t.defer = !0, s.head.appendChild(t) } "undefined" != typeof Promise && (o = "wpEmojiSettingsSupports", i = ["flag", "emoji"], n.supports = { everything: !0, everythingExceptFlag: !0 }, e = new Promise(function (e) { s.addEventListener("DOMContentLoaded", e, { once: !0 }) }), new Promise(function (t) { var n = function () { try { var e = JSON.parse(sessionStorage.getItem(o)); if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests } catch (e) { } return null }(); if (!n) { if ("undefined" != typeof Worker && "undefined" != typeof OffscreenCanvas && "undefined" != typeof URL && URL.createObjectURL && "undefined" != typeof Blob) try { var e = "postMessage(" + g.toString() + "(" + [JSON.stringify(i), f.toString(), p.toString(), u.toString()].join(",") + "));", a = new Blob([e], { type: "text/javascript" }), r = new Worker(URL.createObjectURL(a), { name: "wpTestEmojiSupports" }); return void (r.onmessage = function (e) { c(n = e.data), r.terminate(), t(n) }) } catch (e) { } c(n = g(i, f, p, u)) } t(n) }).then(function (e) { for (var t in e) n.supports[t] = e[t], n.supports.everything = n.supports.everything && n.supports[t], "flag" !== t && (n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && n.supports[t]); n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && !n.supports.flag, n.DOMReady = !1, n.readyCallback = function () { n.DOMReady = !0 } }).then(function () { return e }).then(function () { var e; n.supports.everything || (n.readyCallback(), (e = n.source || {}).concatemoji ? t(e.concatemoji) : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji))) })) }((window, document), window._wpemojiSettings);
-	</script>
-
-	<style id="wp-emoji-styles-inline-css">
-		img.wp-smiley,
-		img.emoji {
-			display: inline !important;
-			border: none !important;
-			box-shadow: none !important;
-			height: 1em !important;
-			width: 1em !important;
-			margin: 0 0.07em !important;
-			vertical-align: -0.1em !important;
-			background: none !important;
-			padding: 0 !important;
-		}
-	</style>
 	<style id="global-styles-inline-css">
 		:root {
 			--wp--preset--aspect-ratio--square: 1;
@@ -506,13 +506,15 @@
 	<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="wp-json/oembed/1.0/embed?url=https%3A%2F%2Fensaladasenfrasco.com%2F">
 	<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="wp-json/oembed/1.0/embed-1?url=https%3A%2F%2Fensaladasenfrasco.com%2F&format=xml">
 	<meta name="generator" content="Elementor 3.32.5; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
-	<link rel="preload" as="image" href="images/17.webp" fetchpriority="high">
+	<link rel="preload" as="image" href="images/17-800-opt.webp" fetchpriority="high">
 	<link rel="preload" as="image" href="images/14-819x1024.webp">
-	<link rel="preload" as="image" href="assets/ensaladas/mockup-ensaladas.webp">
 	<script type="text/javascript">
 		function importHotmart() {
+			if (window.__hotmartWidgetLoaded) return;
+			window.__hotmartWidgetLoaded = true;
 			var imported = document.createElement('script');
 			imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+			imported.async = true;
 			document.head.appendChild(imported);
 			var link = document.createElement('link');
 			link.rel = 'stylesheet';
@@ -520,27 +522,15 @@
 			link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
 			document.head.appendChild(link);
 		}
-		importHotmart();
+		window.addEventListener('load', function () {
+			setTimeout(importHotmart, 1400);
+			document.addEventListener('pointerdown', function (event) {
+				if (event.target.closest && event.target.closest('.hotmart__button-checkout')) {
+					importHotmart();
+				}
+			}, { passive: true });
+		}, { once: true });
 	</script>
-	<!-- Meta Pixel Code -->
-	<script>
-		!function (f, b, e, v, n, t, s) {
-			if (f.fbq) return; n = f.fbq = function () {
-				n.callMethod ?
-				n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-			};
-			if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-			n.queue = []; t = b.createElement(e); t.async = !0;
-			t.src = v; s = b.getElementsByTagName(e)[0];
-			s.parentNode.insertBefore(t, s)
-		}(window, document, 'script',
-			'https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '1703116340263333');
-		fbq('track', 'PageView');
-	</script>
-	<noscript><img height="1" width="1" style="display:none"
-			src="tr?id=902634108552382&ev=PageView&noscript=1"></noscript>
-	<!-- End Meta Pixel Code -->
 	<style>
 		.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
 		.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
@@ -565,7 +555,7 @@
 	</style>
 	<meta name="theme-color" content="#FFFFFF">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<script data-cfasync="false" nonce="9a8588d5-a1aa-4bd6-a4d9-85c36ccc5901">try{(function(w,d){!function(j,k,l,m){if(j.zaraz)console.error("zaraz is loaded twice");else{j[l]=j[l]||{};j[l].executed=[];j.zaraz={deferred:[],listeners:[]};j.zaraz._v="5870";j.zaraz._n="9a8588d5-a1aa-4bd6-a4d9-85c36ccc5901";j.zaraz.q=[];j.zaraz._f=function(n){return async function(){var o=Array.prototype.slice.call(arguments);j.zaraz.q.push({m:n,a:o})}};for(const p of["track","set","ecommerce","debug"])j.zaraz[p]=j.zaraz._f(p);j.zaraz.init=()=>{var q=k.getElementsByTagName(m)[0],r=k.createElement(m),s=k.getElementsByTagName("title")[0];s&&(j[l].t=k.getElementsByTagName("title")[0].text);j[l].x=Math.random();j[l].w=j.screen.width;j[l].h=j.screen.height;j[l].j=j.innerHeight;j[l].e=j.innerWidth;j[l].l=j.location.href;j[l].r=k.referrer;j[l].k=j.screen.colorDepth;j[l].n=k.characterSet;j[l].o=(new Date).getTimezoneOffset();if(j.dataLayer)for(const t of Object.entries(Object.entries(dataLayer).reduce((u,v)=>({...u[1],...v[1]}),{})))zaraz.set(t[0],t[1],{scope:"page"});j[l].q=[];for(;j.zaraz.q.length;){const w=j.zaraz.q.shift();j[l].q.push(w)}r.defer=!0;for(const x of[localStorage,sessionStorage])Object.keys(x||{}).filter(z=>z.startsWith("_zaraz_")).forEach(y=>{try{j[l]["z_"+y.slice(7)]=JSON.parse(x.getItem(y))}catch{j[l]["z_"+y.slice(7)]=x.getItem(y)}});r.referrerPolicy="origin";r.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(j[l])));q.parentNode.insertBefore(r,q)};["complete","interactive"].includes(k.readyState)?zaraz.init():j.addEventListener("DOMContentLoaded",zaraz.init)}}(w,d,"zarazData","script");window.zaraz._p=async bs=>new Promise(bt=>{if(bs){bs.e&&bs.e.forEach(bu=>{try{const bv=d.querySelector("script[nonce]"),bw=bv?.nonce||bv?.getAttribute("nonce"),bx=d.createElement("script");bw&&(bx.nonce=bw);bx.innerHTML=bu;bx.onload=()=>{d.head.removeChild(bx)};d.head.appendChild(bx)}catch(by){console.error(`Error executing script: ${bu}\n`,by)}});Promise.allSettled((bs.f||[]).map(bz=>fetch(bz[0],bz[1])))}bt()});zaraz._p({"e":["(function(w,d){})(window,document)"]});})(window,document)}catch(e){throw fetch("/cdn-cgi/zaraz/t"),e;};</script><script>(function(w,d){})(window,document)</script><script src="wp-includes/js/wp-emoji-release.min.js?ver=6.8.3" defer=""></script></head>
+</head>
 
 <body class="wp-singular page-template page-template-elementor_canvas page page-id-11737 wp-embed-responsive wp-theme-hello-elementor theme-default elementor-default elementor-template-canvas elementor-kit-5 elementor-page elementor-page-11737">
 	<!-- Google Tag Manager (noscript) -->
@@ -577,7 +567,7 @@
 			<div class="e-con-inner">
 				<div class="elementor-element elementor-element-3305f33 elementor-widget elementor-widget-image" data-id="3305f33" data-element_type="widget" data-widget_type="image.default">
 					<div class="elementor-widget-container">
-						<img fetchpriority="high" decoding="async" width="800" height="580" src="images/17.webp" class="attachment-large size-large wp-image-12705" alt="Ensaladas en Frasco + Aderezos" srcset="images/17.webp 1024w, images/17-300x205.webp 300w, images/17-768x525.webp 768w" sizes="(max-width: 800px) 100vw, 800px">
+						<img fetchpriority="high" decoding="async" width="800" height="580" src="images/17-800-opt.webp" class="attachment-large size-large wp-image-12705" alt="Ensaladas en Frasco + Aderezos" srcset="images/17-800-opt.webp 800w, images/17-300x205.webp 300w" sizes="(max-width: 800px) 100vw, 800px">
 					</div>
 				</div>
 				<div class="elementor-element elementor-element-a85d7a1 elementor-widget elementor-widget-image" data-id="a85d7a1" data-element_type="widget" data-widget_type="image.default">
@@ -656,7 +646,7 @@
 											<path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z">
 											</path>
 										</svg> </span>
-									<span class="elementor-icon-list-text">Conservación por hasta 7 días</span>
+									<span class="elementor-icon-list-text">ConservaciÃ³n por hasta 7 dÃ­as</span>
 								</li>
 								<li class="elementor-icon-list-item">
 									<span class="elementor-icon-list-icon">
@@ -672,14 +662,14 @@
 											<path d="M336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM96 424c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm0-96c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm0-96c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm96-192c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm128 368c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-96c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-96c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16z">
 											</path>
 										</svg> </span>
-									<span class="elementor-icon-list-text">Paso a paso de preparación</span>
+									<span class="elementor-icon-list-text">Paso a paso de preparaciÃ³n</span>
 								</li>
 							</ul>
 						</div>
 					</div>
 					<div class="elementor-element elementor-element-9520a06 elementor-widget elementor-widget-image" data-id="9520a06" data-element_type="widget" data-widget_type="image.default">
 						<div class="elementor-widget-container">
-							<img decoding="async" width="800" height="800" src="images/2.webp" class="attachment-large size-large wp-image-12690" alt="Ensaladas listas en el refrigerador por hasta 7 días" srcset="images/2.webp 1024w, images/2-300x300.webp 300w, images/2-150x150.webp 150w, images/2-768x768.webp 768w" sizes="(max-width: 800px) 100vw, 800px">
+							<img decoding="async" width="800" height="800" src="images/2.webp" class="attachment-large size-large wp-image-12690" alt="Ensaladas listas en el refrigerador por hasta 7 dÃ­as" srcset="images/2.webp 1024w, images/2-300x300.webp 300w, images/2-150x150.webp 150w, images/2-768x768.webp 768w" sizes="(max-width: 800px) 100vw, 800px">
 						</div>
 					</div>
 					<div class="elementor-element elementor-element-d3391b8 elementor-align-justify elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-button" data-id="d3391b8" data-element_type="widget" data-widget_type="button.default">
@@ -708,8 +698,8 @@
 						<div class="elementor-image-box-wrapper">
 							<figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="1080" height="1350" src="images/6.webp" class="attachment-full size-full wp-image-12694" alt="" srcset="images/6.webp 1080w, images/6-240x300.webp 240w, images/6-819x1024.webp 819w, images/6-768x960.webp 768w" sizes="(max-width: 1080px) 100vw, 1080px"></figure>
 							<div class="elementor-image-box-content">
-								<h3 class="elementor-image-box-title">ENSALADA REFRESCANTE<br>+ ADEREZO CÍTRICO</h3>
-								<p class="elementor-image-box-description">Conservación: 7 días<br>Calorías: 100 kcal</p>
+								<h3 class="elementor-image-box-title">ENSALADA REFRESCANTE<br>+ ADEREZO CÃTRICO</h3>
+								<p class="elementor-image-box-description">ConservaciÃ³n: 7 dÃ­as<br>CalorÃ­as: 100 kcal</p>
 							</div>
 						</div>
 					</div>
@@ -720,7 +710,7 @@
 							<figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="1080" height="1350" src="images/7.webp" class="attachment-full size-full wp-image-12695" alt="" srcset="images/7.webp 1080w, images/7-240x300.webp 240w, images/7-819x1024.webp 819w, images/7-768x960.webp 768w" sizes="(max-width: 1080px) 100vw, 1080px"></figure>
 							<div class="elementor-image-box-content">
 								<h3 class="elementor-image-box-title">ENSALADA CAPRESE</h3>
-								<p class="elementor-image-box-description">Conservación: 7 días<br>Calorías: 120 kcal</p>
+								<p class="elementor-image-box-description">ConservaciÃ³n: 7 dÃ­as<br>CalorÃ­as: 120 kcal</p>
 							</div>
 						</div>
 					</div>
@@ -730,8 +720,8 @@
 						<div class="elementor-image-box-wrapper">
 							<figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="1080" height="1350" src="images/9.webp" class="attachment-full size-full wp-image-12697" alt="" srcset="images/9.webp 1080w, images/9-240x300.webp 240w, images/9-819x1024.webp 819w, images/9-768x960.webp 768w" sizes="(max-width: 1080px) 100vw, 1080px"></figure>
 							<div class="elementor-image-box-content">
-								<h3 class="elementor-image-box-title">ENSALADA CÉSAR<br>+ ADEREZO ORIGINAL</h3>
-								<p class="elementor-image-box-description">Conservación: 7 días<br>Calorías: 115 kcal</p>
+								<h3 class="elementor-image-box-title">ENSALADA CÃ‰SAR<br>+ ADEREZO ORIGINAL</h3>
+								<p class="elementor-image-box-description">ConservaciÃ³n: 7 dÃ­as<br>CalorÃ­as: 115 kcal</p>
 							</div>
 						</div>
 					</div>
@@ -753,7 +743,7 @@
 							<figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="1080" height="1350" src="images/14.webp" class="attachment-full size-full wp-image-12702" alt="" srcset="images/14.webp 1080w, images/14-240x300.webp 240w, images/14-819x1024.webp 819w, images/14-768x960.webp 768w" sizes="(max-width: 1080px) 100vw, 1080px"></figure>
 							<div class="elementor-image-box-content">
 								<h3 class="elementor-image-box-title">ENSALADA BIG MAC<br>+ ADEREZO ESPECIAL</h3>
-								<p class="elementor-image-box-description">Conservación: 7 días<br>Calorías: 180 kcal</p>
+								<p class="elementor-image-box-description">ConservaciÃ³n: 7 dÃ­as<br>CalorÃ­as: 180 kcal</p>
 							</div>
 						</div>
 					</div>
@@ -763,8 +753,8 @@
 						<div class="elementor-image-box-wrapper">
 							<figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="1080" height="1350" src="images/10.webp" class="attachment-full size-full wp-image-12698" alt="" srcset="images/10.webp 1080w, images/10-240x300.webp 240w, images/10-819x1024.webp 819w, images/10-768x960.webp 768w" sizes="(max-width: 1080px) 100vw, 1080px"></figure>
 							<div class="elementor-image-box-content">
-								<h3 class="elementor-image-box-title">ENSALADA MEDITERRÁNEA<br>+ ADEREZO AGRIDULCE</h3>
-								<p class="elementor-image-box-description">Conservación: 7 días<br>Calorías: 120 kcal</p>
+								<h3 class="elementor-image-box-title">ENSALADA MEDITERRÃNEA<br>+ ADEREZO AGRIDULCE</h3>
+								<p class="elementor-image-box-description">ConservaciÃ³n: 7 dÃ­as<br>CalorÃ­as: 120 kcal</p>
 							</div>
 						</div>
 					</div>
@@ -775,7 +765,7 @@
 							<figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="1080" height="1350" src="images/11.webp" class="attachment-full size-full wp-image-12699" alt="" srcset="images/11.webp 1080w, images/11-240x300.webp 240w, images/11-819x1024.webp 819w, images/11-768x960.webp 768w" sizes="(max-width: 1080px) 100vw, 1080px"></figure>
 							<div class="elementor-image-box-content">
 								<h3 class="elementor-image-box-title">ENSALADA TOSCANA<br>+ ADEREZO SICILIANO</h3>
-								<p class="elementor-image-box-description">Conservación: 7 días<br>Calorías: 130 kcal</p>
+								<p class="elementor-image-box-description">ConservaciÃ³n: 7 dÃ­as<br>CalorÃ­as: 130 kcal</p>
 							</div>
 						</div>
 					</div>
@@ -783,10 +773,10 @@
 				<div class="elementor-element elementor-element-a46f175 elementor-position-top elementor-widget elementor-widget-image-box" data-id="a46f175" data-element_type="widget" data-widget_type="image-box.default">
 					<div class="elementor-widget-container">
 						<div class="elementor-image-box-wrapper">
-							<figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="1080" height="1350" src="images/Design-sem-nome-9-1.png" class="attachment-full size-full wp-image-12038" alt="" srcset="images/Design-sem-nome-9-1.png 1080w, images/Design-sem-nome-9-1-240x300.png 240w, images/Design-sem-nome-9-1-819x1024.png 819w, images/Design-sem-nome-9-1-768x960.png 768w" sizes="(max-width: 1080px) 100vw, 1080px"></figure>
+							<figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="640" height="800" src="images/Design-sem-nome-9-1-640.webp" class="attachment-full size-full wp-image-12038" alt="" srcset="images/Design-sem-nome-9-1-320.webp 320w, images/Design-sem-nome-9-1-640.webp 640w" sizes="(max-width: 640px) 100vw, 640px"></figure>
 							<div class="elementor-image-box-content">
-								<h3 class="elementor-image-box-title">ENSALADA RÚSTICA<br>+ MOSTAZA Y MIEL</h3>
-								<p class="elementor-image-box-description">Conservación: 7 días<br>Calorías: 160 kcal</p>
+								<h3 class="elementor-image-box-title">ENSALADA RÃšSTICA<br>+ MOSTAZA Y MIEL</h3>
+								<p class="elementor-image-box-description">ConservaciÃ³n: 7 dÃ­as<br>CalorÃ­as: 160 kcal</p>
 							</div>
 						</div>
 					</div>
@@ -844,7 +834,7 @@
 				<div class="elementor-element elementor-element-5766ed38 e-con-full e-flex e-con e-child" data-id="5766ed38" data-element_type="container">
 					<div class="elementor-element elementor-element-22b7b356 elementor-widget__width-inherit elementor-widget elementor-widget-heading" data-id="22b7b356" data-element_type="widget" data-widget_type="heading.default">
 						<div class="elementor-widget-container">
-							<h2 class="elementor-heading-title elementor-size-default">Mira cómo se prepara<br><b>por dentro:</b></h2>
+							<h2 class="elementor-heading-title elementor-size-default">Mira cÃ³mo se prepara<br><b>por dentro:</b></h2>
 						</div>
 					</div>
 				</div>
@@ -858,9 +848,9 @@
 				</div>
 				<div class="elementor-element elementor-element-21a6aaa elementor-widget elementor-widget-html" data-id="21a6aaa" data-element_type="widget" data-widget_type="html.default">
 					<div class="elementor-widget-container">
-						<div style="max-width: 800px; margin: 0 auto; border: 3px solid #3C342B; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
-							<iframe width="100%" height="540" src="https://www.youtube.com/embed/2-A2chrN41w?rel=0&modestbranding=1&fs=0&controls=1" title="YouTube Shorts" frameborder="0" style="border:0; display:block; object-fit:cover;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="false">
-							</iframe>
+						<div class="lite-youtube" data-youtube-id="2-A2chrN41w" role="button" tabindex="0" aria-label="Reproducir video de preparaciÃ³n">
+							<img src="images/youtube-preparo-thumb.webp" alt="Vista previa del video de preparaciÃ³n" loading="lazy" decoding="async">
+							<span class="lite-youtube-play" aria-hidden="true"></span>
 						</div>
 
 					</div>
@@ -872,7 +862,7 @@
 				<div class="elementor-element elementor-element-4c5b264 e-con-full e-flex e-con e-child" data-id="4c5b264" data-element_type="container">
 					<div class="elementor-element elementor-element-9ae17ae elementor-widget__width-inherit elementor-widget elementor-widget-heading" data-id="9ae17ae" data-element_type="widget" data-widget_type="heading.default">
 						<div class="elementor-widget-container">
-							<h2 class="elementor-heading-title elementor-size-default">También vas a recibir recetas extra<br><b>para complementar tu rutina:</b></h2>
+							<h2 class="elementor-heading-title elementor-size-default">TambiÃ©n vas a recibir recetas extra<br><b>para complementar tu rutina:</b></h2>
 						</div>
 					</div>
 				</div>
@@ -953,7 +943,7 @@
 				<div class="elementor-element elementor-element-57784d7d e-con-full e-flex e-con e-child" data-id="57784d7d" data-element_type="container">
 					<div class="elementor-element elementor-element-1ff5ec26 elementor-widget__width-inherit elementor-widget elementor-widget-heading" data-id="1ff5ec26" data-element_type="widget" data-widget_type="heading.default">
 						<div class="elementor-widget-container">
-							<h4 class="elementor-heading-title elementor-size-default">¿TE PASA ESTO<br><b>A TI?</b></h4>
+							<h4 class="elementor-heading-title elementor-size-default">Â¿TE PASA ESTO<br><b>A TI?</b></h4>
 						</div>
 					</div>
 				</div>
@@ -966,7 +956,7 @@
 										<path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z">
 										</path>
 									</svg> </span>
-								<span class="elementor-icon-list-text">Te da flojera lavar y cortar ensalada todos los días.</span>
+								<span class="elementor-icon-list-text">Te da flojera lavar y cortar ensalada todos los dÃ­as.</span>
 							</li>
 							<li class="elementor-icon-list-item">
 								<span class="elementor-icon-list-icon">
@@ -982,7 +972,7 @@
 										<path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z">
 										</path>
 									</svg> </span>
-								<span class="elementor-icon-list-text">Dejas de comer ensalada varios días de la semana.</span>
+								<span class="elementor-icon-list-text">Dejas de comer ensalada varios dÃ­as de la semana.</span>
 							</li>
 							<li class="elementor-icon-list-item">
 								<span class="elementor-icon-list-icon">
@@ -1021,24 +1011,24 @@
 					<section class="offer-conversion-card" id="oferta" aria-label="Oferta Ensaladas en Frasco + Aderezos">
 						<div class="offer-top-badge">ACCESO INMEDIATO</div>
 						<h2 class="offer-main-title">ENSALADAS EN FRASCO + ADEREZOS</h2>
-						<p class="offer-subtitle">Recetas prácticas y saludables para preparar en casa</p>
+						<p class="offer-subtitle">Recetas prÃ¡cticas y saludables para preparar en casa</p>
 
-						<img class="offer-product-mockup" src="assets/ensaladas/mockup-ensaladas.webp" alt="Mockup de Ensaladas en Frasco + Aderezos" loading="lazy" decoding="async">
+						<img class="offer-product-mockup" src="assets/ensaladas/mockup-ensaladas-720.webp" alt="Mockup de Ensaladas en Frasco + Aderezos" loading="lazy" decoding="async">
 
 						<div class="offer-benefits-card">
-							<div class="offer-benefits-header">¿QUÉ RECIBES?</div>
+							<div class="offer-benefits-header">Â¿QUÃ‰ RECIBES?</div>
 							<div class="offer-benefits-body">
 								<ul class="offer-benefits-list">
-									<li><span class="offer-check">✓</span><span>60 recetas de ensaladas</span></li>
-									<li><span class="offer-check">✓</span><span>Recetas de aderezos</span></li>
-									<li><span class="offer-check">✓</span><span>20 recetas de smoothies</span></li>
-									<li><span class="offer-check">✓</span><span>5 recetas de shots matinales</span></li>
-									<li><span class="offer-check">✓</span><span>15 recetas de aguas saborizadas</span></li>
+									<li><span class="offer-check">âœ“</span><span>60 recetas de ensaladas</span></li>
+									<li><span class="offer-check">âœ“</span><span>Recetas de aderezos</span></li>
+									<li><span class="offer-check">âœ“</span><span>20 recetas de smoothies</span></li>
+									<li><span class="offer-check">âœ“</span><span>5 recetas de shots matinales</span></li>
+									<li><span class="offer-check">âœ“</span><span>15 recetas de aguas saborizadas</span></li>
 								</ul>
 								<div class="offer-benefits-divider"></div>
 								<ul class="offer-benefits-list">
-									<li><span class="offer-check">✓</span><span>Acceso digital inmediato</span></li>
-									<li><span class="offer-check">✓</span><span>Se puede ver desde celular, tablet o computadora</span></li>
+									<li><span class="offer-check">âœ“</span><span>Acceso digital inmediato</span></li>
+									<li><span class="offer-check">âœ“</span><span>Se puede ver desde celular, tablet o computadora</span></li>
 								</ul>
 							</div>
 						</div>
@@ -1057,20 +1047,20 @@
 							<p class="offer-access-copy">Recibe acceso inmediato a todas las recetas</p>
 							<div class="offer-currency-box">
 								<div class="offer-currency-copy">
-									<span class="offer-globe" aria-hidden="true">🌐</span>
-									<p>El pago se convierte automáticamente a tu moneda local según tu país: México, Chile, Colombia, Perú y otros países de LATAM.</p>
+									<span class="offer-globe" aria-hidden="true">ðŸŒ</span>
+									<p>El pago se convierte automÃ¡ticamente a tu moneda local segÃºn tu paÃ­s: MÃ©xico, Chile, Colombia, PerÃº y otros paÃ­ses de LATAM.</p>
 								</div>
 								<div class="offer-latam-table" aria-label="Equivalente aproximado en LATAM">
 									<div class="offer-latam-head">Equivalente aprox. en LATAM</div>
-									<div class="offer-latam-row"><span><img class="latam-flag" src="assets/ensaladas/flags/mx.png" alt="Bandera de México" loading="lazy" decoding="async">México:</span><strong>MX$87</strong></div>
+									<div class="offer-latam-row"><span><img class="latam-flag" src="assets/ensaladas/flags/mx.png" alt="Bandera de MÃ©xico" loading="lazy" decoding="async">MÃ©xico:</span><strong>MX$87</strong></div>
 									<div class="offer-latam-row"><span><img class="latam-flag" src="assets/ensaladas/flags/cl.png" alt="Bandera de Chile" loading="lazy" decoding="async">Chile:</span><strong>CLP$4.550</strong></div>
 									<div class="offer-latam-row"><span><img class="latam-flag" src="assets/ensaladas/flags/co.png" alt="Bandera de Colombia" loading="lazy" decoding="async">Colombia:</span><strong>COP$18.950</strong></div>
-									<div class="offer-latam-row"><span><img class="latam-flag" src="assets/ensaladas/flags/pe.png" alt="Bandera de Perú" loading="lazy" decoding="async">Perú:</span><strong>S/17</strong></div>
+									<div class="offer-latam-row"><span><img class="latam-flag" src="assets/ensaladas/flags/pe.png" alt="Bandera de PerÃº" loading="lazy" decoding="async">PerÃº:</span><strong>S/17</strong></div>
 								</div>
 							</div>
 						</div>
 
-						<a onclick="return false;" href="https://pay.hotmart.com/Q105930297M?checkoutMode=2" class="offer-main-cta hotmart-fb hotmart__button-checkout">SÍ, QUIERO ACCEDER AHORA</a>
+						<a onclick="return false;" href="https://pay.hotmart.com/Q105930297M?checkoutMode=2" class="offer-main-cta hotmart-fb hotmart__button-checkout">SÃ, QUIERO ACCEDER AHORA</a>
 						<div class="offer-urgency">**OFERTA DISPONIBLE HOY**</div>
 					</section>
 					<div class="elementor-element elementor-element-54502ac elementor-widget__width-inherit elementor-widget elementor-widget-heading" data-id="54502ac" data-element_type="widget" data-widget_type="heading.default">
@@ -1080,7 +1070,7 @@
 					</div>
 					<div class="elementor-element elementor-element-761b811 elementor-widget elementor-widget-image" data-id="761b811" data-element_type="widget" data-widget_type="image.default">
 						<div class="elementor-widget-container">
-							<img loading="lazy" decoding="async" width="800" height="722" src="images/16.webp" class="attachment-large size-large wp-image-12704" alt="Oferta Ensaladas en Frasco + Aderezos por US$5" srcset="images/16.webp 1024w, images/16-300x279.webp 300w, images/16-768x714.webp 768w" sizes="(max-width: 800px) 100vw, 800px">
+							<img loading="lazy" decoding="async" width="720" height="650" src="images/16-720-opt.webp" class="attachment-large size-large wp-image-12704" alt="Oferta Ensaladas en Frasco + Aderezos por US$5" srcset="images/16-720-opt.webp 720w, images/16-300x279.webp 300w" sizes="(max-width: 720px) 100vw, 720px">
 						</div>
 					</div>
 					<div class="elementor-element elementor-element-80efcc6 elementor-align-center elementor-mobile-align-center elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="80efcc6" data-element_type="widget" data-widget_type="icon-list.default">
@@ -1117,7 +1107,7 @@
 										<span class="elementor-headline-dynamic-text elementor-headline-text-active">
 											US$29</span>
 									</span>
-									<span class="elementor-headline-plain-text elementor-headline-text-wrapper">…</span>
+									<span class="elementor-headline-plain-text elementor-headline-text-wrapper">â€¦</span>
 								</h3>
 							</div>
 						</div>
@@ -1129,7 +1119,7 @@
 						<div class="elementor-element elementor-element-75a9d20 elementor-widget__width-inherit elementor-widget elementor-widget-text-editor" data-id="75a9d20" data-element_type="widget" data-widget_type="text-editor.default">
 							<div class="elementor-widget-container">
 								<p><span class="offer-price-highlight">POR SOLO US$5</span></p>
-								<p class="offer-currency-note">El pago se convierte automáticamente a tu moneda local según tu país: México, Chile, Colombia, Perú y otros países de LATAM.</p>
+								<p class="offer-currency-note">El pago se convierte automÃ¡ticamente a tu moneda local segÃºn tu paÃ­s: MÃ©xico, Chile, Colombia, PerÃº y otros paÃ­ses de LATAM.</p>
 							</div>
 						</div>
 						<div class="elementor-element elementor-element-356eaa0 elementor-align-justify elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-button" data-id="356eaa0" data-element_type="widget" data-widget_type="button.default">
@@ -1137,7 +1127,7 @@
 								<div class="elementor-button-wrapper">
 									<a onclick="return false;" class="elementor-button elementor-button-link elementor-size-md hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/Q105930297M?checkoutMode=2">
 										<span class="elementor-button-content-wrapper">
-											<span class="elementor-button-text">SÍ, QUIERO ACCEDER AHORA</span>
+											<span class="elementor-button-text">SÃ, QUIERO ACCEDER AHORA</span>
 										</span>
 									</a>
 								</div>
@@ -1166,9 +1156,9 @@
 				</div>
 				<div class="elementor-element elementor-element-5d22840b elementor-widget elementor-widget-text-editor" data-id="5d22840b" data-element_type="widget" data-widget_type="text-editor.default">
 					<div class="elementor-widget-container">
-						<p>Mis recetas de Ensaladas en Frasco y Aderezos Irresistibles siempre fueron de las más pedidas.
-							Reuní las 60 mejores en un solo material para que tú también puedas preparar ensaladas frescas,
-							prácticas y deliciosas durante toda la semana.</p>
+						<p>Mis recetas de Ensaladas en Frasco y Aderezos Irresistibles siempre fueron de las mÃ¡s pedidas.
+							ReunÃ­ las 60 mejores en un solo material para que tÃº tambiÃ©n puedas preparar ensaladas frescas,
+							prÃ¡cticas y deliciosas durante toda la semana.</p>
 					</div>
 				</div>
 			</div>
@@ -1185,16 +1175,16 @@
 						<div class="elementor-image-carousel-wrapper swiper" role="region" aria-roledescription="carousel" aria-label="Carrusel de im?genes" dir="ltr">
 							<div class="elementor-image-carousel swiper-wrapper" aria-live="off">
 								<div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="1 de 4">
-									<figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="images/testimonio-silvia-dorneles-es.png" alt="Testimonio en español de Silvia Dorneles sobre ensaladas frescas toda la semana"></figure>
+									<figure class="swiper-slide-inner"><img loading="lazy" decoding="async" class="swiper-slide-image" src="images/testimonio-silvia-dorneles-es-640.webp" alt="Testimonio en espaÃ±ol de Silvia Dorneles sobre ensaladas frescas toda la semana"></figure>
 								</div>
 								<div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="2 de 4">
-									<figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="images/testimonio-rafaela-castro-es.png" alt="Testimonio en español de Rafaela Castro sobre sus primeras ensaladas en frasco"></figure>
+									<figure class="swiper-slide-inner"><img loading="lazy" decoding="async" class="swiper-slide-image" src="images/testimonio-rafaela-castro-es-640.webp" alt="Testimonio en espaÃ±ol de Rafaela Castro sobre sus primeras ensaladas en frasco"></figure>
 								</div>
 								<div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="3 de 4">
-									<figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="images/testimonio-ster-santos-es.png" alt="Testimonio en español de Ster Santos sobre organizar sus ensaladas"></figure>
+									<figure class="swiper-slide-inner"><img loading="lazy" decoding="async" class="swiper-slide-image" src="images/testimonio-ster-santos-es-640.webp" alt="Testimonio en espaÃ±ol de Ster Santos sobre organizar sus ensaladas"></figure>
 								</div>
 								<div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="4 de 4">
-									<figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="images/testimonio-bruna-barros-es.png" alt="Testimonio en español de Bruna Barros sobre ensaladas frescas y prácticas"></figure>
+									<figure class="swiper-slide-inner"><img loading="lazy" decoding="async" class="swiper-slide-image" src="images/testimonio-bruna-barros-es-640.webp" alt="Testimonio en espaÃ±ol de Bruna Barros sobre ensaladas frescas y prÃ¡cticas"></figure>
 								</div>
 							</div>
 							<div class="elementor-swiper-button elementor-swiper-button-prev" role="button" tabindex="0">
@@ -1242,7 +1232,7 @@
 											</path>
 										</svg></span>
 								</span>
-								<a class="elementor-toggle-title" tabindex="0">¿Cómo recibo el material?</a>
+								<a class="elementor-toggle-title" tabindex="0">Â¿CÃ³mo recibo el material?</a>
 							</div>
 
 							<div id="elementor-tab-content-53510" class="elementor-tab-content elementor-clearfix" data-tab="10" role="region" aria-labelledby="elementor-tab-title-53510">
@@ -1261,11 +1251,11 @@
 											</path>
 										</svg></span>
 								</span>
-								<a class="elementor-toggle-title" tabindex="0">¿El pago es seguro?</a>
+								<a class="elementor-toggle-title" tabindex="0">Â¿El pago es seguro?</a>
 							</div>
 
 							<div id="elementor-tab-content-5351" class="elementor-tab-content elementor-clearfix" data-tab="1" role="region" aria-labelledby="elementor-tab-title-5351">
-								<p>Sí. El pago se realiza en un entorno seguro y tu acceso se libera después de la confirmación. Si necesitas ayuda con tu compra, nuestro soporte puede orientarte por e-mail.</p>
+								<p>SÃ­. El pago se realiza en un entorno seguro y tu acceso se libera despuÃ©s de la confirmaciÃ³n. Si necesitas ayuda con tu compra, nuestro soporte puede orientarte por e-mail.</p>
 							</div>
 						</div>
 						<div class="elementor-toggle-item">
@@ -1280,11 +1270,11 @@
 											</path>
 										</svg></span>
 								</span>
-								<a class="elementor-toggle-title" tabindex="0">¿Necesito frascos especiales?</a>
+								<a class="elementor-toggle-title" tabindex="0">Â¿Necesito frascos especiales?</a>
 							</div>
 
 							<div id="elementor-tab-content-5352" class="elementor-tab-content elementor-clearfix" data-tab="2" role="region" aria-labelledby="elementor-tab-title-5352">
-								<p>No. Puedes usar cualquier frasco que ya tengas en casa: de vidrio o plástico, grande o pequeño. Lo importante es que cierre bien para ayudar a conservar la ensalada fresca.</p>
+								<p>No. Puedes usar cualquier frasco que ya tengas en casa: de vidrio o plÃ¡stico, grande o pequeÃ±o. Lo importante es que cierre bien para ayudar a conservar la ensalada fresca.</p>
 							</div>
 						</div>
 						<div class="elementor-toggle-item">
@@ -1299,11 +1289,11 @@
 											</path>
 										</svg></span>
 								</span>
-								<a class="elementor-toggle-title" tabindex="0">¿Qué incluye el material?</a>
+								<a class="elementor-toggle-title" tabindex="0">Â¿QuÃ© incluye el material?</a>
 							</div>
 
 							<div id="elementor-tab-content-5353" class="elementor-tab-content elementor-clearfix" data-tab="3" role="region" aria-labelledby="elementor-tab-title-5353">
-								<p>Incluye 60 recetas de ensaladas en frasco, recetas de aderezos, ideas de armado en capas y bonos extras para complementar tu rutina de comidas prácticas.</p>
+								<p>Incluye 60 recetas de ensaladas en frasco, recetas de aderezos, ideas de armado en capas y bonos extras para complementar tu rutina de comidas prÃ¡cticas.</p>
 							</div>
 						</div>
 						<div class="elementor-toggle-item">
@@ -1318,11 +1308,11 @@
 											</path>
 										</svg></span>
 								</span>
-								<a class="elementor-toggle-title" tabindex="0">¿Las ensaladas realmente duran hasta 7 días?</a>
+								<a class="elementor-toggle-title" tabindex="0">Â¿Las ensaladas realmente duran hasta 7 dÃ­as?</a>
 							</div>
 
 							<div id="elementor-tab-content-5354" class="elementor-tab-content elementor-clearfix" data-tab="4" role="region" aria-labelledby="elementor-tab-title-5354">
-								<p>Sí. Cuando se arma en el orden correcto de capas, la ensalada puede mantenerse fresca por hasta 7 días en el refrigerador. Así preparas una vez y tienes comidas listas para la semana.</p>
+								<p>SÃ­. Cuando se arma en el orden correcto de capas, la ensalada puede mantenerse fresca por hasta 7 dÃ­as en el refrigerador. AsÃ­ preparas una vez y tienes comidas listas para la semana.</p>
 							</div>
 						</div>
 						<div class="elementor-toggle-item">
@@ -1337,11 +1327,11 @@
 											</path>
 										</svg></span>
 								</span>
-								<a class="elementor-toggle-title" tabindex="0">¿Puedo preparar todo una vez para la semana?</a>
+								<a class="elementor-toggle-title" tabindex="0">Â¿Puedo preparar todo una vez para la semana?</a>
 							</div>
 
 							<div id="elementor-tab-content-5355" class="elementor-tab-content elementor-clearfix" data-tab="5" role="region" aria-labelledby="elementor-tab-title-5355">
-								<p>Sí. La idea es preparar tus frascos en unos 30 minutos y dejar opciones frescas listas para varios días. Es práctico para ahorrar tiempo y evitar improvisar cuando tienes una rutina corrida.</p>
+								<p>SÃ­. La idea es preparar tus frascos en unos 30 minutos y dejar opciones frescas listas para varios dÃ­as. Es prÃ¡ctico para ahorrar tiempo y evitar improvisar cuando tienes una rutina corrida.</p>
 							</div>
 						</div>
 						<div class="elementor-toggle-item">
@@ -1356,11 +1346,11 @@
 											</path>
 										</svg></span>
 								</span>
-								<a class="elementor-toggle-title" tabindex="0">¿Sirve para llevar al trabajo o a la universidad?</a>
+								<a class="elementor-toggle-title" tabindex="0">Â¿Sirve para llevar al trabajo o a la universidad?</a>
 							</div>
 
 							<div id="elementor-tab-content-5356" class="elementor-tab-content elementor-clearfix" data-tab="6" role="region" aria-labelledby="elementor-tab-title-5356">
-								<p>Sí. Son recetas pensadas para dejar listas en el refrigerador y llevar en el bolso térmico al trabajo, a la universidad o a cualquier lugar donde quieras comer mejor sin complicarte.</p>
+								<p>SÃ­. Son recetas pensadas para dejar listas en el refrigerador y llevar en el bolso tÃ©rmico al trabajo, a la universidad o a cualquier lugar donde quieras comer mejor sin complicarte.</p>
 							</div>
 						</div>
 						<div class="elementor-toggle-item">
@@ -1375,11 +1365,11 @@
 											</path>
 										</svg></span>
 								</span>
-								<a class="elementor-toggle-title" tabindex="0">¿Las recetas son fáciles de hacer?</a>
+								<a class="elementor-toggle-title" tabindex="0">Â¿Las recetas son fÃ¡ciles de hacer?</a>
 							</div>
 
 							<div id="elementor-tab-content-5357" class="elementor-tab-content elementor-clearfix" data-tab="7" role="region" aria-labelledby="elementor-tab-title-5357">
-								<p>Sí. Todas las recetas tienen instrucciones claras y un paso a paso simple. No necesitas ser experta en cocina: si puedes lavar, cortar, mezclar y sazonar, puedes prepararlas.</p>
+								<p>SÃ­. Todas las recetas tienen instrucciones claras y un paso a paso simple. No necesitas ser experta en cocina: si puedes lavar, cortar, mezclar y sazonar, puedes prepararlas.</p>
 							</div>
 						</div>
 						<div class="elementor-toggle-item">
@@ -1394,11 +1384,11 @@
 											</path>
 										</svg></span>
 								</span>
-								<a class="elementor-toggle-title" tabindex="0">¿Puedo acceder desde cualquier país?</a>
+								<a class="elementor-toggle-title" tabindex="0">Â¿Puedo acceder desde cualquier paÃ­s?</a>
 							</div>
 
 							<div id="elementor-tab-content-5358" class="elementor-tab-content elementor-clearfix" data-tab="8" role="region" aria-labelledby="elementor-tab-title-5358">
-								<p>Sí. El material es digital y puedes acceder desde cualquier país. Las recetas usan ingredientes simples y fáciles de encontrar en supermercados o mercados locales.</p>
+								<p>SÃ­. El material es digital y puedes acceder desde cualquier paÃ­s. Las recetas usan ingredientes simples y fÃ¡ciles de encontrar en supermercados o mercados locales.</p>
 							</div>
 						</div>
 						<div class="elementor-toggle-item">
@@ -1413,11 +1403,11 @@
 											</path>
 										</svg></span>
 								</span>
-								<a class="elementor-toggle-title" tabindex="0">¿Necesito utensilios específicos?</a>
+								<a class="elementor-toggle-title" tabindex="0">Â¿Necesito utensilios especÃ­ficos?</a>
 							</div>
 
 							<div id="elementor-tab-content-5359" class="elementor-tab-content elementor-clearfix" data-tab="9" role="region" aria-labelledby="elementor-tab-title-5359">
-								<p>No. Solo necesitas frascos con tapa, cuchara, cuchillo y una tabla para cortar. Nada de básculas, procesadores ni equipos caros. La idea es que sea simple, práctico y posible para tu día a día.</p>
+								<p>No. Solo necesitas frascos con tapa, cuchara, cuchillo y una tabla para cortar. Nada de bÃ¡sculas, procesadores ni equipos caros. La idea es que sea simple, prÃ¡ctico y posible para tu dÃ­a a dÃ­a.</p>
 							</div>
 						</div>
 
@@ -1465,7 +1455,7 @@
 	<script src="js/frontend-modules.min.js" id="elementor-frontend-modules-js"></script>
 	<script src="js/core.min.js" id="jquery-ui-core-js"></script>
 	<script id="elementor-frontend-js-before">
-		var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false, "isScriptDebug": false }, "i18n": { "shareOnFacebook": "Compartir en Facebook", "shareOnTwitter": "Compartir en Twitter", "pinIt": "Fijar", "download": "Descargar", "downloadImage": "Descargar imagen", "fullscreen": "Pantalla completa", "zoom": "Zoom", "share": "Compartir", "playVideo": "Reproducir video", "previous": "Anterior", "next": "Siguiente", "close": "Cerrar", "a11yCarouselPrevSlideMessage": "Diapositiva anterior", "a11yCarouselNextSlideMessage": "Siguiente diapositiva", "a11yCarouselFirstSlideMessage": "Esta es la primera diapositiva", "a11yCarouselLastSlideMessage": "Esta es la última diapositiva", "a11yCarouselPaginationBulletMessage": "Ir a la diapositiva" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, "responsive": { "breakpoints": { "mobile": { "label": "Dispositivos móviles en modo vertical", "value": 767, "default_value": 767, "direction": "max", "is_enabled": true }, "mobile_extra": { "label": "Dispositivos móviles en modo horizontal", "value": 880, "default_value": 880, "direction": "max", "is_enabled": false }, "tablet": { "label": "Tablet en modo vertical", "value": 1024, "default_value": 1024, "direction": "max", "is_enabled": true }, "tablet_extra": { "label": "Tablet en modo horizontal", "value": 1200, "default_value": 1200, "direction": "max", "is_enabled": false }, "laptop": { "label": "Laptop", "value": 1366, "default_value": 1366, "direction": "max", "is_enabled": false }, "widescreen": { "label": "Pantalla amplia", "value": 2400, "default_value": 2400, "direction": "min", "is_enabled": false } }, "hasCustomBreakpoints": false }, "version": "3.32.5", "is_static": false, "experimentalFeatures": { "e_font_icon_svg": true, "additional_custom_breakpoints": true, "container": true, "theme_builder_v2": true, "hello-theme-header-footer": true, "nested-elements": true, "home_screen": true, "global_classes_should_enforce_capabilities": true, "e_variables": true, "cloud-library": true, "e_opt_in_v4_page": true, "import-export-customization": true, "mega-menu": true }, "urls": { "assets": "wp-content\/plugins\/elementor\/assets\/", "ajaxurl": "wp-admin\/admin-ajax.php", "uploadUrl": "wp-content\/uploads" }, "nonces": { "floatingButtonsClickTracking": "23c64666e9" }, "swiperClass": "swiper", "settings": { "page": [], "editorPreferences": [] }, "kit": { "active_breakpoints": ["viewport_mobile", "viewport_tablet"], "global_image_lightbox": "yes", "lightbox_enable_counter": "yes", "lightbox_enable_fullscreen": "yes", "lightbox_enable_zoom": "yes", "lightbox_enable_share": "yes", "lightbox_title_src": "title", "lightbox_description_src": "description", "hello_header_logo_type": "title", "hello_footer_logo_type": "logo" }, "post": { "id": 11737, "title": "Ensaladas%20en%20Frasco%20%2B%20Aderezos", "excerpt": "", "featuredImage": false } };
+		var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false, "isScriptDebug": false }, "i18n": { "shareOnFacebook": "Compartir en Facebook", "shareOnTwitter": "Compartir en Twitter", "pinIt": "Fijar", "download": "Descargar", "downloadImage": "Descargar imagen", "fullscreen": "Pantalla completa", "zoom": "Zoom", "share": "Compartir", "playVideo": "Reproducir video", "previous": "Anterior", "next": "Siguiente", "close": "Cerrar", "a11yCarouselPrevSlideMessage": "Diapositiva anterior", "a11yCarouselNextSlideMessage": "Siguiente diapositiva", "a11yCarouselFirstSlideMessage": "Esta es la primera diapositiva", "a11yCarouselLastSlideMessage": "Esta es la Ãºltima diapositiva", "a11yCarouselPaginationBulletMessage": "Ir a la diapositiva" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, "responsive": { "breakpoints": { "mobile": { "label": "Dispositivos mÃ³viles en modo vertical", "value": 767, "default_value": 767, "direction": "max", "is_enabled": true }, "mobile_extra": { "label": "Dispositivos mÃ³viles en modo horizontal", "value": 880, "default_value": 880, "direction": "max", "is_enabled": false }, "tablet": { "label": "Tablet en modo vertical", "value": 1024, "default_value": 1024, "direction": "max", "is_enabled": true }, "tablet_extra": { "label": "Tablet en modo horizontal", "value": 1200, "default_value": 1200, "direction": "max", "is_enabled": false }, "laptop": { "label": "Laptop", "value": 1366, "default_value": 1366, "direction": "max", "is_enabled": false }, "widescreen": { "label": "Pantalla amplia", "value": 2400, "default_value": 2400, "direction": "min", "is_enabled": false } }, "hasCustomBreakpoints": false }, "version": "3.32.5", "is_static": false, "experimentalFeatures": { "e_font_icon_svg": true, "additional_custom_breakpoints": true, "container": true, "theme_builder_v2": true, "hello-theme-header-footer": true, "nested-elements": true, "home_screen": true, "global_classes_should_enforce_capabilities": true, "e_variables": true, "cloud-library": true, "e_opt_in_v4_page": true, "import-export-customization": true, "mega-menu": true }, "urls": { "assets": "wp-content\/plugins\/elementor\/assets\/", "ajaxurl": "wp-admin\/admin-ajax.php", "uploadUrl": "wp-content\/uploads" }, "nonces": { "floatingButtonsClickTracking": "23c64666e9" }, "swiperClass": "swiper", "settings": { "page": [], "editorPreferences": [] }, "kit": { "active_breakpoints": ["viewport_mobile", "viewport_tablet"], "global_image_lightbox": "yes", "lightbox_enable_counter": "yes", "lightbox_enable_fullscreen": "yes", "lightbox_enable_zoom": "yes", "lightbox_enable_share": "yes", "lightbox_title_src": "title", "lightbox_description_src": "description", "hello_header_logo_type": "title", "hello_footer_logo_type": "logo" }, "post": { "id": 11737, "title": "Ensaladas%20en%20Frasco%20%2B%20Aderezos", "excerpt": "", "featuredImage": false } };
 	</script>
 	<script src="js/frontend.min_1.js" id="elementor-frontend-js"></script>
 	<script src="js/swiper.min.js" id="swiper-js"></script>
@@ -1645,7 +1635,7 @@
 	<section class="sticky-offer-bar" aria-label="Oferta especial Ensaladas en Frasco">
 		<div class="sticky-offer__inner">
 			<div class="sticky-offer__mockup">
-				<img src="assets/ensaladas/sticky-mockup-ensaladas.webp" alt="Ensaladas en Frasco + Aderezos" loading="lazy" decoding="async">
+				<img src="assets/ensaladas/sticky-mockup-ensaladas-300.webp" alt="Ensaladas en Frasco + Aderezos" loading="lazy" decoding="async">
 			</div>
 			<div class="sticky-offer__content">
 				<h3>Ensaladas en Frasco + Aderezos</h3>
@@ -1684,15 +1674,38 @@
 			</div>
 			<div class="sticky-offer__cta-area">
 				<a href="#oferta" class="sticky-offer__cta" aria-label="Ir para a oferta de Ensaladas en Frasco por US$5">
-					<span>SÍ, QUIERO ACCEDER AHORA</span>
-					<span class="sticky-cta-arrow" aria-hidden="true">›</span>
+					<span>SÃ, QUIERO ACCEDER AHORA</span>
+					<span class="sticky-cta-arrow" aria-hidden="true">â€º</span>
 				</a>
-				<div class="sticky-offer__secure"><span aria-hidden="true">🔒</span><span>Acceso inmediato</span></div>
+				<div class="sticky-offer__secure"><span aria-hidden="true">ðŸ”’</span><span>Acceso inmediato</span></div>
 			</div>
 		</div>
 	</section>
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
+			document.querySelectorAll('.lite-youtube').forEach(function (player) {
+				var activate = function () {
+					if (player.dataset.loaded === 'true') return;
+					player.dataset.loaded = 'true';
+					var id = player.dataset.youtubeId;
+					var iframe = document.createElement('iframe');
+					iframe.title = player.getAttribute('aria-label') || 'Video';
+					iframe.loading = 'lazy';
+					iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+					iframe.allowFullscreen = true;
+					iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1&fs=0&controls=1';
+					player.replaceChildren(iframe);
+				};
+
+				player.addEventListener('click', activate);
+				player.addEventListener('keydown', function (event) {
+					if (event.key === 'Enter' || event.key === ' ') {
+						event.preventDefault();
+						activate();
+					}
+				});
+			});
+
 			var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 			var pageRoot = document.querySelector('.elementor-11737');
 

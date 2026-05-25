@@ -1,8 +1,23 @@
 ﻿<!DOCTYPE html><html lang="es-LA"><head>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		window.fbq = window.fbq || function () { (window.fbq.queue = window.fbq.queue || []).push(arguments); };
-		window.fbq('init', '1703116340263333');
+		!function (f, b, e, v, n, t, s) {
+			if (f.fbq) return;
+			n = f.fbq = function () {
+				n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+			};
+			if (!f._fbq) f._fbq = n;
+			n.push = n;
+			n.loaded = true;
+			n.version = '2.0';
+			n.queue = [];
+			t = b.createElement(e);
+			t.async = true;
+			t.src = v;
+			s = b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t, s);
+		}(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+		window.fbq('init', '970920318982404');
 		window.fbq('track', 'PageView');
 
 		function loadMarketingTags() {
@@ -14,11 +29,6 @@
 			gtm.async = true;
 			gtm.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KC7KWN5F';
 			document.head.appendChild(gtm);
-
-			var pixel = document.createElement('script');
-			pixel.async = true;
-			pixel.src = 'https://connect.facebook.net/en_US/fbevents.js';
-			document.head.appendChild(pixel);
 		}
 
 		window.addEventListener('load', function () {
@@ -572,6 +582,9 @@
 </head>
 
 <body class="wp-singular page-template page-template-elementor_canvas page page-id-11737 wp-embed-responsive wp-theme-hello-elementor theme-default elementor-default elementor-template-canvas elementor-kit-5 elementor-page elementor-page-11737">
+	<noscript><img height="1" width="1" style="display:none"
+			src="https://www.facebook.com/tr?id=970920318982404&ev=PageView&noscript=1"
+			alt=""></noscript>
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC7KWN5F" height="0" width="0"
 			style="display:none;visibility:hidden"></iframe></noscript>
@@ -1633,6 +1646,9 @@
 			}
 
 			function trackInitiateCheckout() {
+				if (window.__hotmartInitiateCheckoutTracked) return;
+				window.__hotmartInitiateCheckoutTracked = true;
+
 				window.dataLayer = window.dataLayer || [];
 				window.dataLayer.push({
 					event: 'InitiateCheckout',

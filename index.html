@@ -506,6 +506,9 @@
 	<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="wp-json/oembed/1.0/embed?url=https%3A%2F%2Fensaladasenfrasco.com%2F">
 	<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="wp-json/oembed/1.0/embed-1?url=https%3A%2F%2Fensaladasenfrasco.com%2F&format=xml">
 	<meta name="generator" content="Elementor 3.32.5; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+	<link rel="preload" as="image" href="images/17.webp" fetchpriority="high">
+	<link rel="preload" as="image" href="images/14-819x1024.webp">
+	<link rel="preload" as="image" href="assets/ensaladas/mockup-ensaladas.webp">
 	<script type="text/javascript">
 		function importHotmart() {
 			var imported = document.createElement('script');
@@ -1699,58 +1702,6 @@
 
 			document.body.classList.add('sales-motion-ready');
 
-			function splitLetters(element) {
-				if (!element || element.dataset.lettersReady === 'true') {
-					return;
-				}
-
-				var walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
-					acceptNode: function (node) {
-						if (!node.nodeValue || !node.nodeValue.trim()) {
-							return NodeFilter.FILTER_REJECT;
-						}
-						return NodeFilter.FILTER_ACCEPT;
-					}
-				});
-				var textNodes = [];
-
-				while (walker.nextNode()) {
-					textNodes.push(walker.currentNode);
-				}
-
-				var count = 0;
-				textNodes.forEach(function (node) {
-					var fragment = document.createDocumentFragment();
-					node.nodeValue.split(/(\s+)/).forEach(function (part) {
-						if (!part) {
-							return;
-						}
-
-						if (/^\s+$/.test(part)) {
-							fragment.appendChild(document.createTextNode(part));
-							return;
-						}
-
-						var word = document.createElement('span');
-						word.className = 'reveal-word';
-
-						Array.from(part).forEach(function (char) {
-							var span = document.createElement('span');
-							span.className = 'reveal-letter';
-							span.style.setProperty('--char-index', count);
-							span.textContent = char;
-							word.appendChild(span);
-							count += 1;
-						});
-
-						fragment.appendChild(word);
-					});
-					node.parentNode.replaceChild(fragment, node);
-				});
-
-				element.dataset.lettersReady = 'true';
-			}
-
 			var sections = Array.from(pageRoot.querySelectorAll(':scope > .e-parent'));
 			var offerSection = document.querySelector('.offer-conversion-card');
 
@@ -1777,7 +1728,6 @@
 				titles.forEach(function (title) {
 					if (title.textContent.trim().length <= 90) {
 						title.classList.add('motion-title');
-						splitLetters(title);
 					}
 				});
 			});
@@ -1790,7 +1740,7 @@
 							revealObserver.unobserve(entry.target);
 						}
 					});
-				}, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+				}, { threshold: 0.06, rootMargin: '0px 0px 14% 0px' });
 
 				sections.forEach(function (section) {
 					revealObserver.observe(section);

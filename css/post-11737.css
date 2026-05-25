@@ -488,16 +488,17 @@ body > .sticky-offer-bar,
 }
 
 @media (max-width:900px){
+  body{padding-bottom:94px !important;}
   body > .sticky-offer-bar,
   .sticky-offer-bar{
     left:10px !important;
     right:10px !important;
-    bottom:10px !important;
+    bottom:8px !important;
     width:auto !important;
     max-width:none !important;
-    min-height:82px !important;
+    min-height:68px !important;
     transform:translateY(18px) !important;
-    border-radius:18px !important;
+    border-radius:15px !important;
   }
   .sticky-offer-bar.is-visible{
     opacity:1 !important;
@@ -510,32 +511,37 @@ body > .sticky-offer-bar,
     transform:translateY(18px) !important;
   }
   .sticky-offer__inner{
-    grid-template-columns:62px minmax(0,1fr) 118px !important;
+    grid-template-columns:52px minmax(0,1fr) 104px !important;
     gap:7px !important;
-    padding:11px 8px 10px !important;
+    padding:8px 7px 7px !important;
   }
-  .sticky-offer__mockup img{width:62px !important;max-height:68px !important;}
-  .sticky-offer__price{left:80px !important;bottom:7px !important;}
-  .sticky-new-price{font-size:31px !important;}
-  .sticky-offer__cta{height:56px !important;border-radius:13px !important;padding:0 9px !important;gap:0 !important;}
+  .sticky-offer__mockup img{width:52px !important;max-height:54px !important;}
+  .sticky-offer__content{min-width:0 !important;padding-bottom:22px !important;}
+  .sticky-offer__content h3{font-size:0 !important;line-height:1 !important;margin:0 !important;letter-spacing:0 !important;}
+  .sticky-offer__content h3::before{content:"Acceso inmediato";display:block;font-size:13px;font-weight:900;color:#172417;line-height:1.04;}
+  .sticky-offer__content h3::after{content:"Todas las recetas por solo";display:block;margin-top:2px;font-size:10.5px;font-weight:800;color:#333;line-height:1.04;}
+  .sticky-offer__price{left:68px !important;bottom:7px !important;}
+  .sticky-new-price{font-size:29px !important;line-height:.92 !important;}
+  .sticky-offer__cta{height:48px !important;border-radius:11px !important;padding:0 8px !important;gap:0 !important;}
   .sticky-offer__cta::after{display:none !important;}
   .sticky-offer__cta span:first-child{max-width:none !important;width:100% !important;}
-  .sticky-offer__cta span:first-child::before{font-size:15px !important;line-height:1.05 !important;}
+  .sticky-offer__cta span:first-child::before{font-size:13.5px !important;line-height:1.04 !important;}
   .sticky-cta-arrow{display:none !important;}
 }
 
 @media (max-width:380px){
   .sticky-offer__inner{
-    grid-template-columns:54px minmax(0,1fr) 108px !important;
+    grid-template-columns:46px minmax(0,1fr) 96px !important;
     gap:5px !important;
-    padding-left:7px !important;
-    padding-right:7px !important;
+    padding:7px 6px 6px !important;
   }
-  .sticky-offer__mockup img{width:54px !important;}
-  .sticky-offer__price{left:68px !important;bottom:8px !important;}
-  .sticky-new-price{font-size:28px !important;}
-  .sticky-offer__cta{height:54px !important;padding:0 7px !important;}
-  .sticky-offer__cta span:first-child::before{font-size:14px !important;}
+  .sticky-offer__mockup img{width:46px !important;max-height:50px !important;}
+  .sticky-offer__content h3::before{font-size:12.5px !important;}
+  .sticky-offer__content h3::after{font-size:10px !important;}
+  .sticky-offer__price{left:58px !important;bottom:7px !important;}
+  .sticky-new-price{font-size:26px !important;}
+  .sticky-offer__cta{height:46px !important;padding:0 6px !important;}
+  .sticky-offer__cta span:first-child::before{font-size:12.5px !important;}
 }
 
 /* Animacoes de venda por etapa */

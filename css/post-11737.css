@@ -105,56 +105,16 @@ p{
 .elementor-11737 .offer-latam-row strong{text-align:right;font-size:16px;font-weight:900;}
 .elementor-11737 .offer-latam-row span{display:inline-flex;align-items:center;gap:7px;}
 .elementor-11737 .latam-flag{
-  position:relative;
-  display:inline-block;
+  display:block;
   flex:0 0 auto;
   width:24px;
   height:16px;
+  object-fit:cover;
   border-radius:3px;
   overflow:hidden;
   box-shadow:0 0 0 1px rgba(0,0,0,.2),0 1px 2px rgba(0,0,0,.12);
   vertical-align:-2px;
-}
-.elementor-11737 .flag-mx{
-  background:linear-gradient(90deg,#006847 0 33.33%,#fff 33.33% 66.66%,#ce1126 66.66% 100%);
-}
-.elementor-11737 .flag-mx::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:5px;
-  height:5px;
-  border-radius:50%;
-  background:#8c6b22;
-  transform:translate(-50%,-50%);
-}
-.elementor-11737 .flag-cl{
-  background:linear-gradient(180deg,#fff 0 50%,#d52b1e 50% 100%);
-}
-.elementor-11737 .flag-cl::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  width:40%;
-  height:50%;
-  background:#0039a6;
-}
-.elementor-11737 .flag-cl::after{
-  content:"★";
-  position:absolute;
-  left:4px;
-  top:0;
-  color:#fff;
-  font-size:6px;
-  line-height:8px;
-}
-.elementor-11737 .flag-co{
-  background:linear-gradient(180deg,#fcd116 0 50%,#003893 50% 75%,#ce1126 75% 100%);
-}
-.elementor-11737 .flag-pe{
-  background:linear-gradient(90deg,#d91023 0 33.33%,#fff 33.33% 66.66%,#d91023 66.66% 100%);
+  background:#fff;
 }
 
 .elementor-11737 .offer-main-cta{display:flex;align-items:center;justify-content:center;width:91%;margin:8px auto 5px;padding:16px 18px;border-radius:12px;background:linear-gradient(180deg,#29B947,#149529);box-shadow:0 4px 0 #0E711E,0 6px 14px rgba(0,0,0,.14);color:#fff !important;text-decoration:none !important;font-size:31px;font-weight:900;line-height:1.05;text-transform:uppercase;cursor:pointer;}

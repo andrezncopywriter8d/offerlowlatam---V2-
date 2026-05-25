@@ -1485,36 +1485,195 @@
 	<script src="js/frontend.min.js" id="elementor-pro-frontend-js"></script>
 	<script src="js/elements-handlers.min.js" id="pro-elements-handlers-js"></script>
 	<script>
-		// Usamos 'load' en vez de 'DOMContentLoaded' para asegurar que Elementor cargue todo
-		window.addEventListener("load", function () {
+		(function () {
+			var STORAGE_KEY = 'ensaladas_tracking_params_v2';
+			var COOKIE_DAYS = 30;
+			var TRACKING_KEYS = [
+				'utm_source',
+				'utm_campaign',
+				'utm_medium',
+				'utm_content',
+				'utm_term',
+				'xcod',
+				'sck',
+				'src',
+				'fbclid',
+				'gclid',
+				'wbraid',
+				'gbraid'
+			];
 
-			// 1. Toma los parametros de la URL (UTMs, fbclid, etc)
-			const urlParams = window.location.search;
+			function safeDecode(value) {
+				try {
+					return decodeURIComponent(String(value).replace(/\+/g, ' '));
+				} catch (error) {
+					return value;
+				}
+			}
 
-			// Solo se ejecuta si hay parametros en la URL del navegador
-			if (urlParams) {
+			function getCookie(name) {
+				var parts = ('; ' + document.cookie).split('; ' + name + '=');
+				return parts.length === 2 ? parts.pop().split(';').shift() : '';
+			}
 
-				// 2. Selecciona SOLO los links que contienen pay.
-				// Esto protege los botones de navegacion (#price) contra cambios
-				const buttons = document.querySelectorAll('a[href*="pay."]');
+			function setCookie(name, value) {
+				var maxAge = COOKIE_DAYS * 24 * 60 * 60;
+				document.cookie = name + '=' + encodeURIComponent(value) + '; path=/; max-age=' + maxAge + '; SameSite=Lax';
+			}
 
-				buttons.forEach(function (btn) {
-					// Verificacion de seguridad: confirma que sea un link valido
-					if (btn.href && !btn.href.includes('#')) {
+			function readStoredParams() {
+				try {
+					return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}') || {};
+				} catch (error) {
+					return {};
+				}
+			}
 
-						// LOGICA DE PARAMETROS:
-						// Si el link ya tiene '?', usamos '&'. Si no, usamos '?'
-						const separator = btn.href.includes('?') ? '&' : '?';
+			function saveStoredParams(params) {
+				try {
+					localStorage.setItem(STORAGE_KEY, JSON.stringify(params));
+				} catch (error) { }
+				setCookie(STORAGE_KEY, JSON.stringify(params));
+			}
 
-						// Toma los parametros sin el '?' inicial para no duplicar
-						const paramsToAdd = urlParams.substring(1);
+			function collectCurrentParams() {
+				var current = {};
+				var searchParams = new URLSearchParams(window.location.search);
 
-						// Arma el nuevo link
-						btn.href = btn.href + separator + paramsToAdd;
+				searchParams.forEach(function (value, key) {
+					if (TRACKING_KEYS.indexOf(key) !== -1 || key.indexOf('utm_') === 0) {
+						current[key] = safeDecode(value);
 					}
 				});
+
+				if (current.fbclid && !current.utm_source) {
+					current.utm_source = 'FB';
+				}
+
+				if (!current.xcod && (current.utm_campaign || current.utm_medium || current.utm_content || current.utm_term)) {
+					current.xcod = 'FBhQwK21wXxR' +
+						(current.utm_campaign || '') +
+						'hQwK21wXxR' +
+						(current.utm_medium || '') +
+						'hQwK21wXxR' +
+						(current.utm_content || '') +
+						'hQwK21wXxR' +
+						(current.utm_term || '');
+				}
+
+				if (current.fbclid && !current.xcod) {
+					current.xcod = 'FBhQwK21wXxR' + current.fbclid;
+				}
+
+				var fbc = getCookie('_fbc');
+				var fbp = getCookie('_fbp');
+				if (current.fbclid && !fbc) {
+					fbc = 'fb.1.' + Date.now() + '.' + current.fbclid;
+					setCookie('_fbc', fbc);
+				}
+				if (fbc) current.fbc = fbc;
+				if (fbp) current.fbp = fbp;
+
+				return current;
 			}
-		});
+
+			function getTrackingParams() {
+				var stored = readStoredParams();
+				var current = collectCurrentParams();
+				var merged = Object.assign({}, stored, current);
+
+				if (Object.keys(current).length) {
+					saveStoredParams(merged);
+				}
+
+				return merged;
+			}
+
+			function mergeParamsIntoUrl(rawUrl, params) {
+				if (!rawUrl || rawUrl.charAt(0) === '#') return rawUrl;
+
+				var url;
+				try {
+					url = new URL(rawUrl, window.location.href);
+				} catch (error) {
+					return rawUrl;
+				}
+
+				Object.keys(params).forEach(function (key) {
+					var value = params[key];
+					if (value !== undefined && value !== null && String(value).trim() !== '') {
+						url.searchParams.set(key, value);
+					}
+				});
+
+				return url.toString();
+			}
+
+			function isCheckoutLink(link) {
+				if (!link || !link.href) return false;
+				return link.href.indexOf('pay.hotmart.com') !== -1 ||
+					link.classList.contains('hotmart__button-checkout') ||
+					link.classList.contains('utmify-ic');
+			}
+
+			function updateCheckoutLinks() {
+				var params = getTrackingParams();
+				var links = document.querySelectorAll('a[href], .hotmart__button-checkout');
+
+				links.forEach(function (link) {
+					if (!isCheckoutLink(link)) return;
+
+					if (!link.dataset.checkoutBaseHref) {
+						link.dataset.checkoutBaseHref = link.getAttribute('href') || link.href;
+					}
+
+					var trackedHref = mergeParamsIntoUrl(link.dataset.checkoutBaseHref, params);
+					link.setAttribute('href', trackedHref);
+				});
+			}
+
+			function trackInitiateCheckout() {
+				window.dataLayer = window.dataLayer || [];
+				window.dataLayer.push({
+					event: 'InitiateCheckout',
+					content_name: 'Ensaladas en Frasco + Aderezos',
+					value: 5,
+					currency: 'USD'
+				});
+
+				if (typeof window.fbq === 'function') {
+					window.fbq('track', 'InitiateCheckout', {
+						content_name: 'Ensaladas en Frasco + Aderezos',
+						value: 5,
+						currency: 'USD'
+					});
+				}
+			}
+
+			window.__updateCheckoutTracking = updateCheckoutLinks;
+
+			document.addEventListener('DOMContentLoaded', updateCheckoutLinks);
+			window.addEventListener('load', function () {
+				updateCheckoutLinks();
+				setTimeout(updateCheckoutLinks, 700);
+				setTimeout(updateCheckoutLinks, 1800);
+			}, { once: true });
+
+			document.addEventListener('pointerdown', function (event) {
+				var checkoutLink = event.target.closest && event.target.closest('a');
+				if (isCheckoutLink(checkoutLink)) {
+					updateCheckoutLinks();
+				}
+			}, true);
+
+			document.addEventListener('click', function (event) {
+				var checkoutLink = event.target.closest && event.target.closest('a');
+				if (isCheckoutLink(checkoutLink)) {
+					updateCheckoutLinks();
+					trackInitiateCheckout();
+				}
+			}, true);
+		})();
 	</script>
 	<script src="js/traffic-split.js"></script>
 	<style>
